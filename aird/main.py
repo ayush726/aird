@@ -1182,7 +1182,11 @@ def print_banner():
 ██║  ██║██║██║  ██║██████╔╝
 ╚═╝  ╚═╝╚═╝╚═╝  ╚═╝╚═════╝ 
 """
-    print(banner)
+    try:
+        print(banner)
+    except UnicodeEncodeError:
+        # Fallback for Windows console encoding issues
+        print("AIRD - Modern Web-Based File Management Platform")
 
 def main():
     print_banner()
